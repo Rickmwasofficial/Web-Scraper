@@ -2,8 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 
 res = requests.get("https://news.ycombinator.com/")
-res = requests.get("https://news.ycombinator.com/newest?next=40244653&n=31")
+res2 = requests.get("https://news.ycombinator.com/newest?next=40244653&n=31")
 soup = BeautifulSoup(res.text, 'html.parser')
+soup2 = BeautifulSoup(res2.text, 'html.parser')
 links = soup.select(".titleline a")
 votes = soup.select(".score")
 pure_links = []
